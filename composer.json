@@ -1,0 +1,50 @@
+{
+    "name": "honda/pushed-resources",
+    "description": "Add styles or scripts on the fly",
+    "keywords": [
+        "honda",
+        "pushed-resources"
+    ],
+    "homepage": "https://github.com/laravel-honda/pushed-resources",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Félix Dorn",
+            "email": "github@felixdorn.fr",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "illuminate/contracts": "^8.0",
+        "spatie/laravel-package-tools": "^1.6"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "Honda\\PushedResources\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Honda\\PushedResources\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Honda\\PushedResources\\PushedResourcesServiceProvider"
+            ],
+            "aliases": {
+                "PushedResources": "Honda\\PushedResources\\PushedResourcesFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
