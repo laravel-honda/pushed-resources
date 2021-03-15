@@ -2,12 +2,11 @@
 
 namespace Honda\PushedResources;
 
-use Illuminate\View\View;
+use Honda\PushedResources\Components\PushedScripts;
+use Honda\PushedResources\Components\PushedStyles;
+use Honda\PushedResources\Components\Style;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Starts\Ui\Components\PushedScripts;
-use Starts\Ui\Components\PushedStyles;
-use Starts\Ui\Components\Style;
 
 class PushedResourcesServiceProvider extends PackageServiceProvider
 {
@@ -17,13 +16,12 @@ class PushedResourcesServiceProvider extends PackageServiceProvider
             return new PushedResources;
         });
 
-        $this->loadViewComponentsAs('ui', [
-            Style::class,
-            PushedScripts::class,
-            PushedStyles::class
-        ]);
-
         $package
-            ->name('pushed-resources');
+            ->name('pushed-resources')
+            ->hasViewComponents('ui', [
+                Style::class,
+                PushedScripts::class,
+                PushedStyles::class
+            ]);
     }
 }

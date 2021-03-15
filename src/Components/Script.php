@@ -1,6 +1,6 @@
 <?php
 
-namespace Starts\Ui\Components;
+namespace Honda\PushedResources\Components;
 
 use Illuminate\View\Component;
 use Throwable;
