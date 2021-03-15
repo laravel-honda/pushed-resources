@@ -1,8 +1,7 @@
 @php
-    use App\Support\Scripts;
     if ($slot->isEmpty()) {
-        Scripts::push($href, $attributes);
+        app('pushed-resources')->push('scripts', $href, $attributes);
     } else {
-        Scripts::pushRaw($slot);
+        app('pushed-resources')->pushRaw('scripts', $slot, $attributes);
     }
 @endphp
