@@ -11,8 +11,8 @@ composer require honda/pushed-resources
 
 ```blade
 // resources/view/components/trix.blade.php
-<x-ui::style href="https://unpkg.com/trix@1.3.1/dist/trix.css" />
-<x-ui::script href="https://unpkg.com/trix@1.3.1/dist/trix.js" />
+<x-assets-style href="https://unpkg.com/trix@1.3.1/dist/trix.css" />
+<x-assets-script href="https://unpkg.com/trix@1.3.1/dist/trix.js" />
 <trix-editor name="content" id="content" value="">
 My Editor
 </trix-editor>
@@ -21,11 +21,11 @@ My Editor
 ```blade
 // layout.blade.php
 <head>
-    <x-ui::pushed-styles />
+    <x-assets-pushed-styles />
 </head>
 <body>
 
-    <x-ui::pushed-scripts />
+    <x-assets-pushed-scripts />
 </body>
 ```
 
