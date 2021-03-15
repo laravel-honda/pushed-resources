@@ -21,11 +21,11 @@ My Editor
 ```blade
 // layout.blade.php
 <head>
-    <x-ui-pushed-styles />
+    <x-assets-pushed-styles />
 </head>
 <body>
 
-    <x-ui-pushed-scripts />
+    <x-assets-pushed-scripts />
 </body>
 ```
 
