@@ -9,6 +9,6 @@ class PushedScripts extends Component
 {
     public function render()
     {
-        return view('ui::pushed-scripts');
+        return view('assets::pushed-scripts');
     }
 }

@@ -21,6 +21,6 @@ class Script extends Component
 
     public function render()
     {
-        return view('ui::script');
+        return view('assets::script');
     }
 }

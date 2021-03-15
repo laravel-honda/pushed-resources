@@ -9,6 +9,6 @@ class PushedStyles extends Component
 {
     public function render()
     {
-        return view('ui::pushed-styles');
+        return view('assets::pushed-styles');
     }
 }

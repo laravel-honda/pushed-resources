@@ -21,6 +21,6 @@ class Style extends Component
 
     public function render()
     {
-        return view('ui::style');
+        return view('assets::style');
     }
 }

@@ -18,7 +18,7 @@ class PushedResourcesServiceProvider extends PackageServiceProvider
         });
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'assets');
-        $this->loadViewComponentsAs('ui', [
+        $this->loadViewComponentsAs('assets', [
             Style::class,
             Script::class,
             PushedScripts::class,
