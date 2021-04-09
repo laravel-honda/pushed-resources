@@ -37,7 +37,7 @@ composer test
 
 ## Octane
 
-This package is not compatible with Octane but could easily be by just clearing the injected scripts/styles after each request. However, I have no plan to support it before we fully migrate to PHP 8. I'd accept a PR with tests and explanations.
+This package is not compatible with Octane but could easily be by just clearing the injected scripts/styles after each request. However, I have no plan to support it until we fully migrate to PHP 8. I'd accept a PR with tests and explanations.
 
 ## Credits
 
