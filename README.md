@@ -35,11 +35,16 @@ My Editor
 composer test
 ```
 
+## Octane
+
+This package is not compatible with Octane but could easily be by just clearing the injected scripts/styles after each request. However, I have no plan to support it before we fully migrate to PHP 8. I'd accept a PR with tests and explanations.
+
 ## Credits
 
-- [Félix Dorn](https://github.com/FélixDorn)
+- [Félix Dorn](https://github.com/felixdorn)
 - [All Contributors](../../contributors)
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+.
