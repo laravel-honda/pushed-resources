@@ -2,9 +2,8 @@
 
 namespace Honda\PushedResources\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Honda\PushedResources\PushedResourcesServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

@@ -2,38 +2,54 @@
 
 namespace Honda\PushedResources;
 
+use Honda\PushedResources\Contracts\PushesResources;
 use Illuminate\View\ComponentAttributeBag;
 
-class PushedResources
+class PushedResources implements PushesResources
 {
-    public array $scripts = [];
-    public array $rawScripts = [];
+    /** @var Resource[] */
+    protected array $resources;
 
-    public array $styles = [];
-    public array $rawStyles = [];
-
-    public function push(string $type, string $href, ?ComponentAttributeBag $attributes = null): PushedResources
+    public function pushScript(string $href, ?ComponentAttributeBag $attributes = null): PushesResources
     {
-        $attributes ??= new ComponentAttributeBag();
-
-        if ($type === 'scripts') {
-            $this->scripts[$href] = $attributes;
-        }
-
-        $this->styles[$href] = $attributes;
-
+        $this->resources[] = Resource::create()
+            ->script()
+            ->value($href)
+            ->attributes($attributes);
         return $this;
     }
 
-    public function pushRaw(string $type, string $contents, ?ComponentAttributeBag $attributes = null): PushedResources
+    public function pushRawScript(string $contents, ?ComponentAttributeBag $attributes = null): PushesResources
     {
-        $attributes ??= new ComponentAttributeBag();
-
-        if ($type === 'scripts') {
-            $this->rawScripts[] = [$contents, $attributes];
-        }
-
-        $this->rawStyles[] = [$contents, $attributes];
+        $this->resources[] = Resource::create()
+            ->script()
+            ->raw()
+            ->value($contents)
+            ->attributes($attributes);
         return $this;
+    }
+
+    public function pushStyle(string $href, ?ComponentAttributeBag $attributes = null): PushesResources
+    {
+        $this->resources[] = Resource::create()
+            ->style()
+            ->value($href)
+            ->attributes($attributes);
+        return $this;
+    }
+
+    public function pushRawStyle(string $contents, ?ComponentAttributeBag $attributes = null): PushesResources
+    {
+        $this->resources[] = Resource::create()
+            ->style()
+            ->raw()
+            ->value($contents)
+            ->attributes($attributes);
+        return $this;
+    }
+
+    public function getResources(): array
+    {
+        return $this->resources;
     }
 }

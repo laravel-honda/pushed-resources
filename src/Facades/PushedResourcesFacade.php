@@ -1,6 +1,6 @@
 <?php
 
-namespace Honda\PushedResources;
+namespace Honda\PushedResources\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Facade;
  */
 class PushedResourcesFacade extends Facade
 {
+    public static function fake(): PushedResourcesFake
+    {
+        static::swap($fake = new PushedResourcesFake());
+
+        return $fake;
+    }
+
     protected static function getFacadeAccessor(): string
     {
         return 'pushed-resources';

@@ -12,7 +12,7 @@ class Script extends Component
     public function __construct(string $href = null)
     {
         try {
-            $href = (string)mix($href);
+            $href = $href !== null ? (string)mix($href) : $href;
         } catch (Throwable $e) {
         }
 
@@ -21,6 +21,6 @@ class Script extends Component
 
     public function render()
     {
-        return view('assets::script');
+        return app('view')->make('assets::script');
     }
 }
