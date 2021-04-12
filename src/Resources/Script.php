@@ -2,14 +2,14 @@
 
 namespace Honda\PushedResources\Resources;
 
-use Honda\PushedResources\Resource;
+use Honda\PushedResources\PushedResource;
 
-class Script extends Resource
+class Script extends PushedResource
 {
     public function render(): string
     {
-        return sprintf('<script %s></script>', $this->attributes->merge([
-            'src' => $this->value,
+        return sprintf('<script %s></script>', $this->getAttributes()->merge([
+            'src' => $this->getValue(),
         ]));
     }
 }

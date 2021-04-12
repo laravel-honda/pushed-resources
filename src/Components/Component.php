@@ -2,8 +2,8 @@
 
 namespace Honda\PushedResources\Components;
 
+use Honda\PushedResources\PushedResource;
 use Honda\PushedResources\PushedResources;
-use Honda\PushedResources\Resource;
 use Illuminate\View\Component as BladeComponent;
 use Illuminate\View\ComponentAttributeBag;
 
@@ -18,7 +18,7 @@ abstract class Component extends BladeComponent
 
     abstract public function registerResource(ComponentAttributeBag $attributes): void;
 
-    public function push(Resource $resource): PushedResources
+    public function push(PushedResource $resource): PushedResources
     {
         return app('pushed-resources')->push($resource);
     }

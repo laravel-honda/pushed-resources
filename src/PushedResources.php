@@ -4,9 +4,14 @@ namespace Honda\PushedResources;
 
 class PushedResources
 {
-    /** @var resource[] */
-    protected array $resources;
+    /** @var PushedResource[] */
+    protected array $resources = [];
 
+    /**
+     * @param callable|PushedResource $resource
+     *
+     * @return $this
+     */
     public function push($resource): self
     {
         $this->resources[] = value($resource);

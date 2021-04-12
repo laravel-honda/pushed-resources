@@ -2,7 +2,8 @@ parameters:
     level: max
     paths:
         - src
-
+    ignoreErrors:
+        - '#Unsafe usage of new static#'
     checkMissingIterableValueType: false
     checkGenericClassInNonGenericObjectType: false
     reportUnmatchedIgnoredErrors: true

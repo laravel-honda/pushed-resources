@@ -2,12 +2,12 @@
 
 namespace Honda\PushedResources\Resources;
 
-use Honda\PushedResources\Resource;
+use Honda\PushedResources\PushedResource;
 
-class RawScript extends Resource
+class RawScript extends PushedResource
 {
     public function render(): string
     {
-        return sprintf('<script %s>%s</script>', $this->attributes, $this->value);
+        return sprintf('<script %s>%s</script>', $this->getAttributes(), $this->getValue());
     }
 }

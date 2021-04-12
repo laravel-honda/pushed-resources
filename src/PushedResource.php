@@ -4,17 +4,17 @@ namespace Honda\PushedResources;
 
 use Illuminate\View\ComponentAttributeBag;
 
-abstract class Resource
+abstract class PushedResource
 {
-    protected string $value                      = '';
-    protected ?ComponentAttributeBag $attributes = null;
+    private ?string $value                     = null;
+    private ?ComponentAttributeBag $attributes = null;
 
     public static function create(): self
     {
         return new static();
     }
 
-    public function value(string $value): self
+    public function value(?string $value): self
     {
         $this->value = $value;
 
@@ -32,7 +32,7 @@ abstract class Resource
 
     public function getValue(): string
     {
-        return $this->value;
+        return $this->value ?? '';
     }
 
     public function getAttributes(): ComponentAttributeBag
