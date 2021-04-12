@@ -2,7 +2,8 @@
 
 namespace Honda\PushedResources\Components;
 
-use Illuminate\View\Component;
+use Honda\PushedResources\Resources\Script as ScriptResource;
+use Illuminate\View\ComponentAttributeBag;
 use Throwable;
 
 class Script extends Component
@@ -19,8 +20,12 @@ class Script extends Component
         $this->href = $href;
     }
 
-    public function render()
+    public function registerResource(ComponentAttributeBag $attributes): void
     {
-        return app('view')->make('assets::script');
+        $this->push(
+            ScriptResource::create()
+                ->value($this->href)
+                ->attributes($attributes)
+        );
     }
 }
