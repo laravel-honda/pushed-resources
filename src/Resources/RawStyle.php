@@ -8,6 +8,6 @@ class RawStyle extends PushedResource
 {
     public function render(): string
     {
-        return sprintf('<style %s> %s</style>', $this->getAttributes(), $this->getValue());
+        return sprintf('<style %s>%s</style>', $this->getAttributes(), $this->getValue());
     }
 }

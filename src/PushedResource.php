@@ -21,8 +21,17 @@ abstract class PushedResource
         return $this;
     }
 
-    public function attributes(ComponentAttributeBag $attributes): self
+    /**
+     * @param ComponentAttributeBag|array $attributes
+     *
+     * @return $this
+     */
+    public function attributes($attributes): self
     {
+        if (is_array($attributes)) {
+            $attributes = new ComponentAttributeBag($attributes);
+        }
+
         $this->attributes = $attributes;
 
         return $this;
