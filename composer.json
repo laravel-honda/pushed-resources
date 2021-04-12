@@ -41,7 +41,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Honda\\PushedResources\\Provider\\PushedResourcesServiceProvider"
+                "Honda\\PushedResources\\Providers\\PushedResourcesServiceProvider"
             ],
             "aliases": {
                 "PushedResources": "Honda\\PushedResources\\Facades\\PushedResources"
