@@ -2,9 +2,8 @@
 
 namespace Honda\PushedResources\Components;
 
-use Illuminate\Contracts\View\View;
-use Illuminate\View\Component;
-use Illuminate\View\Factory;
+use Honda\PushedResources\Resources\Style as StyleResource;
+use Illuminate\View\ComponentAttributeBag;
 use Throwable;
 
 class Style extends Component
@@ -14,15 +13,19 @@ class Style extends Component
     public function __construct(string $href = null)
     {
         try {
-            $href = $href !== null ? (string)mix($href) : $href;
+            $href = $href !== null ? (string) mix($href) : $href;
         } catch (Throwable $e) {
         }
 
         $this->href = $href;
     }
 
-    public function render(): View
+    public function registerResource(ComponentAttributeBag $attributes): void
     {
-        return app('view')->make('assets::style');
+        $this->push(
+            StyleResource::create()
+                ->value($this->href)
+                ->attributes($attributes)
+        );
     }
 }

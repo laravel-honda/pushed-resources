@@ -12,7 +12,7 @@ class Script extends Component
     public function __construct(string $href = null)
     {
         try {
-            $href = $href !== null ? (string)mix($href) : $href;
+            $href = $href !== null ? (string) mix($href) : $href;
         } catch (Throwable $e) {
         }
 

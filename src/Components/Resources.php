@@ -4,7 +4,7 @@ namespace Honda\PushedResources\Components;
 
 use Illuminate\View\Component;
 
-class PushedScripts extends Component
+class Resources extends Component
 {
     public function render()
     {

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Honda\PushedResources\Facades;
-
 
 use Honda\PushedResources\PushedResources;
 use Honda\PushedResources\Resource;
@@ -14,7 +12,7 @@ class PushedResourcesFake extends PushedResources
     {
         PHPUnit::assertNotEmpty($this->resources);
 
-        /** @var Resource $resource */
+        /** @var resource $resource */
         foreach ($this->resources as $resource) {
             if ($this->isSame($resource, $comparison)) {
                 PHPUnit::assertTrue(true);
@@ -39,7 +37,7 @@ class PushedResourcesFake extends PushedResources
             return false;
         }
 
-        if ($resource->getType() !== $comparison->getType()) {
+        if (get_class($resource) !== get_class($comparison)) {
             return false;
         }
 
