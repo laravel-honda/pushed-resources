@@ -9,6 +9,8 @@ composer require honda/pushed-resources
 
 ## Usage
 
+**DOCUMENTATION OUTDATED**
+
 ```blade
 // resources/view/components/trix.blade.php
 <x-assets-style href="https://unpkg.com/trix@1.3.1/dist/trix.css" />
