@@ -8,6 +8,6 @@ class Resources extends Component
 {
     public function render()
     {
-        return app('view')->make('assets::pushed-scripts');
+        return app('view')->make('assets::resources');
     }
 }

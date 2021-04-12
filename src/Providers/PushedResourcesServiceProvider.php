@@ -13,7 +13,7 @@ class PushedResourcesServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->app->singleton('pushed-resources', fn () => new PushedResources());
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'assets');
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'assets');
         $this->loadViewComponentsAs('assets', [
             Style::class,
             Script::class,
