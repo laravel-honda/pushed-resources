@@ -1,4 +1,4 @@
-# Add styles or scripts on the fly in Blade
+# Add styles or scripts on the fly with Blade
 ## Installation
 
 You can install the package via composer:
