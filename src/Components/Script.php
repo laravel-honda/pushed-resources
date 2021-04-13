@@ -3,6 +3,7 @@
 namespace Honda\PushedResources\Components;
 
 use Honda\PushedResources\Resources\Script as ScriptResource;
+use Illuminate\Support\HtmlString;
 use Illuminate\View\ComponentAttributeBag;
 use Throwable;
 
@@ -20,7 +21,7 @@ class Script extends Component
         $this->href = $href;
     }
 
-    public function registerResource(ComponentAttributeBag $attributes): void
+    public function registerResource(ComponentAttributeBag $attributes, HtmlString $slot): void
     {
         $this->push(
             ScriptResource::create()

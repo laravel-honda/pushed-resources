@@ -28,7 +28,10 @@
     "autoload": {
         "psr-4": {
             "Honda\\PushedResources\\": "src"
-        }
+        },
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
