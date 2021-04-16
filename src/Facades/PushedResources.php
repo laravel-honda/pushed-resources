@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Facade;
  * @method static \Honda\PushedResources\PushedResources push(PushedResource|callable $resource)
  * @method static PushedResource[] getResources()
  * @method static PushedResource[] getResourcesByType(string $type = '*')
+ *
+ * @see \Honda\PushedResources\PushedResources
  */
 class PushedResources extends Facade
 {

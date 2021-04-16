@@ -32,12 +32,21 @@ class PushedResources
             return $this->resources;
         }
 
-        return collect($this->resources)
-            ->filter(function (PushedResource $resource) use ($type) {
-                $transform = fn ($string): string => strtolower(Str::slug(class_basename($string)));
+        $types = explode(',', $type);
 
-                return $transform($resource) === $transform($type);
+        return collect($this->resources)
+            ->filter(function (PushedResource $resource) use ($types) {
+                $transform = fn ($string): string => Str::of(class_basename($string))->snake('-')->lower()->replace('-', '');
+
+                foreach ($types as $type) {
+                    if ($transform($resource->getTag()) === $transform($type)) {
+                        return true;
+                    }
+                }
+
+                return false;
             })
-            ->toArray();
+            // Re-indexing the collection
+            ->values()->toArray();
     }
 }

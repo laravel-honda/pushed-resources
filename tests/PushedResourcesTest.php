@@ -39,6 +39,22 @@ it('can filter resources by type', function () {
     expect(PushedResources::getResourcesByType('style'))->toBe([$style]);
     expect(PushedResources::getResourcesByType('Style'))->toBe([$style]);
     expect(PushedResources::getResourcesByType(Style::class))->toBe([$style]);
-    expect(PushedResources::getResourcesByType('rawscript'))->toBeEmpty();
+    expect(PushedResources::getResourcesByType('raw-script'))->toBeEmpty();
     expect(PushedResources::getResourcesByType(RawScript::class))->toBeEmpty();
+    expect(PushedResources::getResourcesByType('script,style'))->toBe([$style, $script]);
+
+    PushedResources::push($rawScript = RawScript::create()->value('console.log(1)'));
+
+    expect(PushedResources::getResourcesByType('raw-script'))->toBe([$rawScript]);
+    expect(PushedResources::getResourcesByType('rawscript'))->toBe([$rawScript]);
+
+    $customResource = new class() extends \Honda\PushedResources\Resources\Blade {
+        public function getTag(): string
+        {
+            return 'my-resource';
+        }
+    };
+
+    PushedResources::push($customResource);
+    expect(PushedResources::getResourcesByType('my-resource'))->toBe([$customResource]);
 });

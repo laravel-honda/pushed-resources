@@ -53,4 +53,9 @@ abstract class PushedResource
     {
         return !is_null($this->attributes);
     }
+
+    public function getTag(): string
+    {
+        return class_basename(static::class);
+    }
 }

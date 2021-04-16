@@ -1,4 +1,5 @@
 # Add styles or scripts on the fly with Blade
+
 ## Installation
 
 You can install the package via composer:
@@ -9,26 +10,97 @@ composer require honda/pushed-resources
 
 ## Usage
 
-**DOCUMENTATION OUTDATED**
+### Pushing resources
 
-```blade
-// resources/view/components/trix.blade.php
-<x-assets-style href="https://unpkg.com/trix@1.3.1/dist/trix.css" />
-<x-assets-script href="https://unpkg.com/trix@1.3.1/dist/trix.js" />
-<trix-editor name="content" id="content" value="">
-My Editor
-</trix-editor>
+#### Using Blade
+
+```html
+
+<x-assets-script async src="script.js />
+
+<x-assets-raw-script>
+    console.log('Hello there!')
+</x-assets-raw-script>
+
+<x-assets-style href=" style.css" />
+
+<x-assets-raw-style>
+    * { background: rebeccapurple
+</x-assets-raw-style>
+
+<x-assets-blade>
+    @livewireStyles
+    @livewireScripts
+</x-assets-blade>
 ```
 
-```blade
-// layout.blade.php
-<head>
-    <x-assets-pushed-styles />
-</head>
-<body>
+#### Using PHP
 
-    <x-assets-pushed-scripts />
-</body>
+```php
+use Honda\PushedResources\Resources\Script;
+use Illuminate\View\ComponentAttributeBag;
+
+Script::create()
+    ->value('something.js')
+    ->attributes(['a' => 'b']) // or
+    ->attributes(new ComponentAttributeBag(['a' => 'b']));
+```
+
+### Retrieving resources
+
+#### Using Blade
+
+```html
+
+<x-assets-resources type="*"/>
+<x-assets-resources type="script"/>
+<x-assets-resources type="script,raw-script"/>
+<x-assets-resources type="style,raw-style"/>
+<x-assets-resources type="style,raw-style"/>
+```
+
+#### Using PHP
+
+```php
+use Honda\PushedResources\Resources\Script;
+use Illuminate\View\ComponentAttributeBag;
+
+Script::create()
+    ->value('something.js')
+    ->attributes(['a' => 'b']) // or
+    ->attributes(new ComponentAttributeBag(['a' => 'b']));
+```
+
+> You can also use `Style`, `Script`, `RawScript`, `RawStyle`, `Blade` in the same namespace
+
+### Custom Types
+
+A good use case for that is livewire assets, you may not want to those on a page where you are not using Livewire. You
+could do something like this:
+
+```php
+// app/View/Resources/BladeScript or wherever you think it makes sense.
+class BladeScript extends \Honda\PushedResources\Resources\Blade {
+    public function getTag() : string{
+        return 'blade-script';
+    }
+}
+```
+
+```php
+// app/View/Components/BladeScript.php
+class BladeScript extends \Honda\PushedResources\Components\Blade {}
+```
+
+```html
+// in a page with livewire
+<x-blade-script>
+    <livewire-scripts/>
+</x-blade-script>
+
+// at the bottom of
+<body> in your layout file
+<x-assets-resources type="blade-script"/>
 ```
 
 ## Testing
@@ -39,7 +111,8 @@ composer test
 
 ## Octane
 
-This package is not compatible with Octane but could easily be by just clearing the injected scripts/styles after each request. However, I have no plan to support it until we fully migrate to PHP 8. I'd accept a PR with tests and explanations.
+This package is not compatible with Octane but could easily be by just clearing the injected resources after each
+request. However, I have no plan to support it until we fully migrate to PHP 8. I'd accept a PR with tests
 
 ## Credits
 
@@ -48,5 +121,4 @@ This package is not compatible with Octane but could easily be by just clearing 
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information. .

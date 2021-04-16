@@ -9,23 +9,23 @@ use Throwable;
 
 class Script extends Component
 {
-    public ?string $href;
+    public ?string $src;
 
-    public function __construct(string $href = null)
+    public function __construct(string $src = null)
     {
         try {
-            $href = $href !== null ? (string) mix($href) : $href;
+            $src = $src !== null ? (string) mix($src) : $src;
         } catch (Throwable $e) {
         }
 
-        $this->href = $href;
+        $this->src = $src;
     }
 
     public function registerResource(ComponentAttributeBag $attributes, HtmlString $slot): void
     {
         $this->push(
             ScriptResource::create()
-                ->value($this->href)
+                ->value($this->src)
                 ->attributes($attributes)
         );
     }
