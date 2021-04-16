@@ -16,7 +16,7 @@ composer require honda/pushed-resources
 
 ```html
 
-<x-assets-script async src="script.js />
+<x-assets-script async src="script.js" />
 
 <x-assets-raw-script>
     console.log('Hello there!')
