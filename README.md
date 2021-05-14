@@ -52,11 +52,11 @@ Script::create()
 
 ```html
 
-<x-assets-resources type="*"/>
-<x-assets-resources type="script"/>
-<x-assets-resources type="script,raw-script"/>
-<x-assets-resources type="style,raw-style"/>
-<x-assets-resources type="style,raw-style"/>
+<x-assets-render type="*"/>
+<x-assets-render type="script"/>
+<x-assets-render type="script,raw-script"/>
+<x-assets-render type="style,raw-style"/>
+<x-assets-render type="style,raw-style"/>
 ```
 
 #### Using PHP
@@ -100,7 +100,7 @@ class BladeScript extends \Honda\PushedResources\Components\Blade {}
 
 // at the bottom of
 <body> in your layout file
-<x-assets-resources type="blade-script"/>
+<x-assets-render type="blade-script"/>
 ```
 
 ## Testing
