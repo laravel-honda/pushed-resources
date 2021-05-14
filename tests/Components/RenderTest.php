@@ -13,6 +13,6 @@ it('renders all resources', function () {
 
     $this->assertComponentRenders(
         '<script src="script.js"></script>',
-        '<x-assets-resources />'
+        '<x-assets-render />'
     );
 });

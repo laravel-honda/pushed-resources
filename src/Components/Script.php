@@ -15,7 +15,7 @@ class Script extends Component
     {
         try {
             $src = $src !== null ? (string) mix($src) : $src;
-        } catch (Throwable $e) {
+        } catch (Throwable) {
         }
 
         $this->src = $src;

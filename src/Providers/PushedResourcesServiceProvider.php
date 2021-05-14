@@ -5,7 +5,7 @@ namespace Honda\PushedResources\Providers;
 use Honda\PushedResources\Components\Blade;
 use Honda\PushedResources\Components\RawScript;
 use Honda\PushedResources\Components\RawStyle;
-use Honda\PushedResources\Components\Resources;
+use Honda\PushedResources\Components\Render;
 use Honda\PushedResources\Components\Script;
 use Honda\PushedResources\Components\Style;
 use Honda\PushedResources\PushedResources;
@@ -23,7 +23,7 @@ class PushedResourcesServiceProvider extends ServiceProvider
             Script::class,
             RawScript::class,
             RawStyle::class,
-            Resources::class,
+            Render::class,
         ]);
     }
 }

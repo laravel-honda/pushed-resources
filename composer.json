@@ -15,11 +15,12 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^8",
+        "felixdorn/laravel-render-blade-string": "^1.0",
         "illuminate/contracts": "^8.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.16.4",
+        "friendsofphp/php-cs-fixer": "^3",
         "gajus/dindent": "^2.0",
         "orchestra/testbench": "^6.17",
         "pestphp/pest": "^1.0.5",
@@ -29,10 +30,7 @@
     "autoload": {
         "psr-4": {
             "Honda\\PushedResources\\": "src"
-        },
-        "files": [
-            "src/Helpers/helpers.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {

@@ -15,7 +15,7 @@ class Style extends Component
     {
         try {
             $href = $href !== null ? (string) mix($href) : $href;
-        } catch (Throwable $e) {
+        } catch (Throwable) {
         }
 
         $this->href = $href;
