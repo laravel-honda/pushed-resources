@@ -6,8 +6,8 @@ use Illuminate\View\ComponentAttributeBag;
 
 abstract class PushedResource
 {
-    private ?string $value                     = null;
-    private ?ComponentAttributeBag $attributes = null;
+    protected ?string $value                     = null;
+    protected ?ComponentAttributeBag $attributes = null;
 
     public static function create(): self
     {
