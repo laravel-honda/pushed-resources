@@ -1,4 +1,9 @@
 # Add styles or scripts on the fly with Blade
+[![Tests](https://github.com/laravel-honda/pushed-resources/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/laravel-honda/pushed-resources/actions/workflows/tests.yml)
+[![Formats](https://github.com/laravel-honda/pushed-resources/actions/workflows/formats.yml/badge.svg?branch=master)](https://github.com/laravel-honda/pushed-resources/actions/workflows/formats.yml)
+[![Version](https://poser.pugx.org/honda/pushed-resources/version)](//packagist.org/packages/honda/pushed-resources)
+[![Total Downloads](https://poser.pugx.org/honda/pushed-resources/downloads)](//packagist.org/packages/honda/pushed-resources)
+[![License](https://poser.pugx.org/honda/pushed-resources/license)](//packagist.org/packages/honda/pushed-resources)
 
 ## Installation
 
@@ -25,7 +30,7 @@ composer require honda/pushed-resources
 <x-assets-style href=" style.css"/>
 
 <x-assets-raw-style>
-    * { background: rebeccapurple
+    * { background: rebeccapurple }
 </x-assets-raw-style>
 
 <x-assets-blade>
