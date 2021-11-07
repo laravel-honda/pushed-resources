@@ -20,6 +20,7 @@ abstract class PushedResource
 
         return $this;
     }
+
     public function attributes(ComponentAttributeBag|array $attributes): self
     {
         if (is_array($attributes)) {

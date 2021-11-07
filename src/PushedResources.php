@@ -9,7 +9,7 @@ class PushedResources
     /** @var PushedResource[] */
     protected array $resources = [];
 
-    public function push(callable | PushedResource $resource): self
+    public function push(callable|PushedResource $resource): self
     {
         $this->resources[] = value($resource);
 

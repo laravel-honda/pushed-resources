@@ -16,13 +16,13 @@ composer require honda/pushed-resources
 
 ```html
 
-<x-assets-script async src="script.js" />
+<x-assets-script async src="script.js"/>
 
 <x-assets-raw-script>
     console.log('Hello there!')
 </x-assets-raw-script>
 
-<x-assets-style href=" style.css" />
+<x-assets-style href=" style.css"/>
 
 <x-assets-raw-style>
     * { background: rebeccapurple
@@ -111,8 +111,7 @@ composer test
 
 ## Octane
 
-This package is not compatible with Octane but could easily be by just clearing the injected resources after each
-request. However, I have no plan to support it until we fully migrate to PHP 8. I'd accept a PR with tests
+This package is compatible with Laravel Octane.
 
 ## Credits
 
