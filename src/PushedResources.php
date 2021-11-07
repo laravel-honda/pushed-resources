@@ -11,6 +11,7 @@ class PushedResources
 
     public function push(callable|PushedResource $resource): self
     {
+        /* @phpstan-ignore-next-line */
         $this->resources[] = value($resource);
 
         return $this;

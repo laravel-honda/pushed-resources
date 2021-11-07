@@ -21,6 +21,7 @@ abstract class Component extends BladeComponent
 
     public function push(PushedResource $resource): PushedResources
     {
+        /* @phpstan-ignore-next-line  */
         return app('pushed-resources')->push($resource);
     }
 }

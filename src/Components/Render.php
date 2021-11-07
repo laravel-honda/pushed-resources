@@ -12,6 +12,7 @@ class Render extends Component
 
     public function render()
     {
+        /* @phpstan-ignore-next-line */
         return app('view')->make('assets::render');
     }
 }
